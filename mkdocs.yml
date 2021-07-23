@@ -1,0 +1,60 @@
+site_name: "Documentation"
+site_description: "Documentation testing"
+site_url: ""
+
+nav:
+  - Overview: index.md
+
+theme:
+  name: material
+
+markdown_extensions:
+  - admonition
+  - toc
+  - mdx_truly_sane_lists
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.extra
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - markdown_inline_graphviz
+  - plantuml_markdown
+
+mdc_configs:
+  toc:
+    permalink: true
+  pymdownx.emoji:
+    emoji_generator: to_svg
+  pymdownx.superfences:
+    legacy_tab_classes: true
+  pymdownx.highlight:
+    linenums: true
+  pymdownx.betterem:
+    smart_enable: "all"
+  pymdownx.tasklist:
+    custom_checkbox: true
+
+# Modelled after https://github.com/backstage/mkdocs-techdocs-core/blob/main/src/core.py
+# until deps bump is merged
+plugins:
+  - search
+  - monorepo
+  - simple:
+      include_folders:
+        - ./docs**
+      semiliterate:
+        - pattern: \.rb$
+          extract:
+          - start: ^\s*#+\W?::docs\b
+            stop: '#\s\::docs\s*$'
+            replace:
+            - ^\s*#?\s?(.*\n?)$

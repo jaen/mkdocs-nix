@@ -1,0 +1,20 @@
+setuptools
+
+# this is mkdocs-techdocs-core @ 0.0.16 deps just with mkdocs bumped to a newer
+# version; when https://github.com/backstage/mkdocs-techdocs-core/pull/27 is merged
+# we can go back to mkdocs-techdocs-core
+mkdocs==1.2.2
+mkdocs-material==5.3.2
+mkdocs-monorepo-plugin~=0.4.13
+plantuml-markdown==3.4.2
+markdown_inline_graphviz_extension==1.1
+pygments==2.7.4
+pymdown-extensions==7.1
+Markdown>=3.2,<4.0
+
+# Other deps
+lunr==0.6.0
+lunr[languages]==0.6.0
+mdx-truly-sane-lists==1.2
+mkdocstrings==0.15.2
+mkdocs-simple-plugin==1.0.0
